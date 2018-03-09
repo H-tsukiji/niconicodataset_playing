@@ -16,4 +16,4 @@ with jsonlines.open('0168.jsonl') as reader:
         length = files["length"]
         size_high = files["size_high"]
         size_low = files["size_low"]
-        print(tags)
+        print(video_id)
