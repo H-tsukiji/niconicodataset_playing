@@ -1,19 +1,13 @@
 import os,jsonlines
 from glob import glob
 
-read_dir  = "file_connection"
-out_dir = ""
+read_dir  = "D:/niconico_dataset/movie_metadata"
+out_dir = "niconico_moviedata.jsonl"
 
 files = glob(os.path.join(read_dir, '*.jsonl'))
 for file in files:
     print(file)
-    with jsonlines.open('0168.jsonl') as reader:
-        for files in reader:
-            tags = files["tags"]
-            video_id = files["video_id"]
-            flag = 0
-            for search_word in search_index:
-                if search_word in tags:
-                    flag = flag +1
-            if flag >= 1:
-                print(video_id)
+    with jsonlines.open(file) as reader:
+        for metadata in reader:
+            with jsonlines.open(out_dir, mode='a') as writer:
+                writer.write(metadata)
