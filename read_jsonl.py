@@ -1,3 +1,4 @@
+# -*- coding:utf-8 -*-
 import jsonlines
 
 with jsonlines.open('0168.jsonl') as reader:

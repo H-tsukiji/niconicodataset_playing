@@ -1,3 +1,4 @@
+# -*- coding:utf-8 -*-
 import os,jsonlines
 from glob import glob
 
